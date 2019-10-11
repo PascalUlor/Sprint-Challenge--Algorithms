@@ -60,6 +60,6 @@ STEPS:
     a. Eggs dropped from `f` or ranges below `f` add to `Not Broken eggs array`
 5. Get the length of `Not Broken eggs array` and `Broken eggs array`
 6. If the `Broken eggs array` is greater than `Not Broken eggs array`
-   then move `f` higher i.e `f` + 1 and repeat Step 4
+   then move `f` higher i.e `f` + 1 and repeat Step 1 to 5
 7. If the `Broken eggs array` is less than `Not Broken eggs array`
    then `f` is optimal and stop
