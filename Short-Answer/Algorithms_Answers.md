@@ -21,16 +21,16 @@ b)
 sum = 0 #O(1)
     for i in range(n): #O(n)
       j = 1 #O(1) * #O(n) ==> #O(n)
-      while j < n: #O(n) * #O(n) ==> #O(n^2)
+      while j < n: # O(n)
         ```
-        j *= 2 #O(1) * #O(n) * O(n) ==> #O(n^2)
-        sum += 1 #O(1) * #O(n) * O(n) ==> #O(n^2)
-        #==> O(n^2) + O(n^2) ==> O(2n^2)
+        j *= 2 #O(log) * #O(n) ==> O(log n) * O(n) ==> O(nlogn)
+        sum += 1
+        #==> O(nlogn)
         ```
 ````
 
-O(1) + #O(n) + #O(n) + #O(n^2) + #O(2n^2) ==> 2*#O(n) + 1 + O(n^2) ==> `O(n + n^2)`
-The above has a linear runtime of `O(n + n^2)`.
+`O(nlogn)`
+The above has a linear runtime of `O(nlogn)`.
 As n increases the number of iterations of the `for loop` increases and since the `while` is nested inside a loop its BigO is `O(n) * O(n)`. Ingoring all constants the runtime is the runtime of the`for loop`time the runtime of the`while loop`
 
 c)
@@ -43,7 +43,7 @@ def bunnyEars(bunnies):
       return 2 + bunnyEars(bunnies-1) #O(n) + 2 ==> O(n)
 ```
 
-O(1) + O(1) + O(n) ==> O(n)
+O(1) + O(1) + O(n) ==> `O(n)`
 
 The above has a linear runtime since it is recursive and will loop till the user input gets to `zero`
 
@@ -66,3 +66,7 @@ STEPS:
    then move `f` higher i.e `f` + 1 and repeat Step 1 to 5
 7. If the `Broken eggs array` is less than `Not Broken eggs array`
    then `f` is optimal and stop
+
+   ```
+   uses binary sort
+   O(logn)

@@ -113,7 +113,7 @@ class SortingRobot:
                 
             self.swap_item()
             self.move_right()
-
+            print(self._time)
             return self.sort()
             
         # pass
