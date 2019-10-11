@@ -6,28 +6,31 @@ a)
 
 ```python
   a = 0 #O(1)
-    while (a < n * n * n): #O(n^3) ==> O(n^3)
-      a = a + n * n #O(1) * O(n^3) ==> O(n^3)
+    while (a < n * n * n): #O(n) ==> O(n)
+      a = a + n * n #O(1) * O(n) ==> O(n)
 ```
 
-O(1) + O(n^3) + O(n^3) ==> O(2n^3) ==> O(n^3)
-The above has a linear runtime i.e `O(n^3)`.
+O(1) + O(n) + O(n) ==> O(2n) ==> O(n)
+The above has a linear runtime i.e `O(n)`.
 No matter the size of `n` the `while loop` iteration multiplies and increases the number `comparison` and returns a `single value` which is `a` till the set condition is met.
 Ingoring all constants the runtime is the runtime of the `while loop`
 
 b)
 
-```
+````
 sum = 0 #O(1)
     for i in range(n): #O(n)
       j = 1 #O(1) * #O(n) ==> #O(n)
       while j < n: #O(n) * #O(n) ==> #O(n^2)
-        j *= 2 #O(1) * O(1) * #O(n) * O(n) ==> #O(n^2)
-        sum += 1 #O(1) * O(1) * #O(n) * O(n) ==> #O(n^2)
-```
+        ```
+        j *= 2 #O(1) * #O(n) * O(n) ==> #O(n^2)
+        sum += 1 #O(1) * #O(n) * O(n) ==> #O(n^2)
+        #==> O(n^2) + O(n^2) ==> O(2n^2)
+        ```
+````
 
-O(1) + #O(n) + #O(n) + #O(n^2) + #O(n) + #O(n) ==> 4*#O(n) + 1 + O(n^2) ==> `O(n^2)`
-The above has a linear runtime of `O(n^2)`.
+O(1) + #O(n) + #O(n) + #O(n^2) + #O(2n^2) ==> 2*#O(n) + 1 + O(n^2) ==> `O(n + n^2)`
+The above has a linear runtime of `O(n + n^2)`.
 As n increases the number of iterations of the `for loop` increases and since the `while` is nested inside a loop its BigO is `O(n) * O(n)`. Ingoring all constants the runtime is the runtime of the`for loop`time the runtime of the`while loop`
 
 c)
@@ -56,8 +59,8 @@ STEPS:
 2. Get a the median of the range of n-story
 3. Set median as `f` which is our pivot
 4. Loop through the range of n-story.
-    a. Eggs dropped from `f` or ranges above or equal to `f` add to `Broken eggs array`
-    a. Eggs dropped from `f` or ranges below `f` add to `Not Broken eggs array`
+   a. Eggs dropped from `f` or ranges above or equal to `f` add to `Broken eggs array`
+   a. Eggs dropped from `f` or ranges below `f` add to `Not Broken eggs array`
 5. Get the length of `Not Broken eggs array` and `Broken eggs array`
 6. If the `Broken eggs array` is greater than `Not Broken eggs array`
    then move `f` higher i.e `f` + 1 and repeat Step 1 to 5
